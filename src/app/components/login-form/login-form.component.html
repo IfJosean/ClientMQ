@@ -1,0 +1,98 @@
+<!--<div id="login-overlay" class="modal-dialog custom-modal-container">
+  <div class="modal-content custom-modal-header">
+    <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Examen 1</h4>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="well">
+            <form id="loginForm" novalidate="novalidate">
+              <h4 class="modal-title" id="title">Estudiant</h4>
+              <div class="form-group">
+                <label for="name" class="control-label">Nom</label>
+                <input type="text" class="form-control" id="name" name="name" value="" required="" title="Introdueix el nom de l'estudiant" placeholder="Nom Cognom" #name>
+                <span class="help-block"></span>
+              </div>
+              <div class="form-group">
+                <label for="address" class="control-label">Adreça</label>
+                <input type="text" class="form-control" id="adress" value="" required="" placeholder="C/Exemple" #address>
+                <span class="help-block"></span>
+              </div>
+              <div class="form-group">
+                <label for="hometlf" class="control-label">Telefon casa</label>
+                <input type="text" class="form-control" id="hometlf" value="" required="" placeholder="XXXXXXXXX" #hometlf>
+                <span class="help-block"></span>
+              </div>
+              <div class="form-group">
+                <label for="worktlf" class="control-label">Telefon feina</label>
+                <input type="text" class="form-control" id="worktlf" value="" required="" placeholder="XXXXXXXXX" #worktlf>
+                <span class="help-block"></span>
+              </div>
+              <div id="loginErrorMsg" class="alert alert-error hide">Error en correo o contraseña</div>
+              <button type="submit" class="btn btn-success btn-block" (click)="addStudent(name.value, address.value, hometlf.value, worktlf.value)">GUARDAR</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <form id="registerForm" method="POST" action="/login/" novalidate="novalidate">
+            <h4 class="modal-title" id="title2">Assignatura</h4>
+            <div class="form-group">
+              <label for="name2" class="control-label">Nom:</label>
+              <input type="text" class="form-control" id="name2" name="name2" value="" required="" title="Introduzca su nombre de usuario" placeholder="Exemple" #name2>
+              <span class="help-block"></span>
+              <label for="quatri" class="control-label">Quatri:</label>
+              <input type="text" class="form-control" id="quatri" name="quatri" value="" required="" title="Introduzca el quatrimestre" placeholder="Tardor o Primavera" #quatri>
+              <span class="help-block"></span>
+              <label for="studies" class="control-label">Studies:</label>
+              <input type="text" class="form-control" id="studies" name="studies" value="" required="" title="Introduzca la carrera" placeholder="Telemática, Telecomunicaciones" #studies>
+              <span class="help-block"></span>
+            </div>
+            <p><a class="btn btn-info btn-block" (click)="addSubject(name2.value, quatri.value, studies.value)">CREAR</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+
+<div class="section-content">
+    <h1 class="section-header"><span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">Examen MQ</span></h1>
+    <h3>User</h3>
+  </div>
+  <div class="contact-section">
+    <div class="container">
+      <form>
+        <div class="col-md-6 form-line">
+          <h3 class="modal-title" id="title">User Registration</h3>
+          <div class="form-group">
+            <label for="namej" class="control-label">Surname</label>
+            <input type="text" class="form-control" id="namej" name="namej" value="" required="" title="Introdueix el cognom" placeholder="Garcia" #username>
+            <span class="help-block"></span>
+          </div>
+          <div class="form-group">
+            <label for="address" class="control-label">Password</label>
+            <input type="text" class="form-control" id="adress" value="" required="" placeholder="*****" #password>
+            <span class="help-block"></span>
+          </div>
+          <div class="form-group">
+            <label for="hometlf" class="control-label">Name</label>
+            <input type="text" class="form-control" id="hometlf" value="" required="" placeholder="Jose Antonio" #name>
+            <span class="help-block"></span>
+          </div>
+          <div class="form-group">
+            <label for="worktlf" class="control-label">mail</label>
+            <input type="text" class="form-control" id="worktlf" value="" required="" placeholder="pepito@email.com" #mail>
+            <span class="help-block"></span>
+          </div>
+          <button type="submit" class="btn btn-success btn-block" (click)="addStudent(username.value, password.value, name.value, mail.value)"><i class="fa fa-paper-plane" aria-hidden="false"></i> Registrar estudiant</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<h4>______________________________________________________________________________________________________________________________________</h4>
+
+<h4>______________________________________________________________________________________________________________________________________</h4>
+
+<app-subject-list></app-subject-list>
