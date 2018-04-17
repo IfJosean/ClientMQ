@@ -84,4 +84,51 @@ export class SubjectService {
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
 
   }
+
+  //funciones buscador filtros
+  searchName(name: string) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+    console.log(name);
+    // ...using get request
+    return this.http.get(  'http://localhost:3000/student/users/searchName/' + name, options)
+    // ...and calling .json() on the response to return data
+      .map((res: Response) => res.json())
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+
+  }
+  searchSurname(name: string) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+    console.log(name);
+    // ...using get request
+    return this.http.get(  'http://localhost:3000/student/users/searchSurname/' + name, options)
+    // ...and calling .json() on the response to return data
+      .map((res: Response) => res.json())
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+
+  }
+  searchRole(name: string) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+    console.log(name);
+    // ...using get request
+    return this.http.get(  'http://localhost:3000/student/users/searchRole/' + name, options)
+    // ...and calling .json() on the response to return data
+      .map((res: Response) => res.json())
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+
+  }
+  searchState(name: string) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+    console.log(name);
+    // ...using get request
+    return this.http.get(  'http://localhost:3000/student/users/searchState/' + name, options)
+    // ...and calling .json() on the response to return data
+      .map((res: Response) => res.json())
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+
+  }
+
 }

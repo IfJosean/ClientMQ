@@ -13,16 +13,22 @@ import { SubjectService } from '../../services/subject.service';
 export class LoginFormComponent {
   student = new Student('', '', {home: '', work: ''}, '');
   subject = new Subject('', '', '', [], '');
-  user = {username: '', password: '', name: '', mail: ''};
+  user = {name: '', surname: '', password: '', role: false, state: false};
   constructor(private studentService: StudentService, private subjectService: SubjectService) {}
-  addStudent(username: string, password: string, name: string, email: string) {
+  addStudent(name: string, surname: string, password: string, role: string) {
     this.user.name = name;
-    this.user.username = username;
+    this.user.surname = surname;
     this.user.password = password;
-    this.user.mail = email;
-    console.log(this.user);
+    if (role == '1'){
+      this.user.role = true;
+    } else{
+      this.user.role = false;
+    }
+        console.log(this.user);
     this.studentService.addStudent(this.user).subscribe(
-      (data) => console.log(data));
+      (data) => { console.log(data);
+        window.location.reload();}
+    );
   }
   addSubject(name: string, quatri: string, studies: string, studentId: string, id: string) {
     this.subject.name = name;

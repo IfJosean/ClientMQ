@@ -67,26 +67,26 @@
         <div class="col-md-6 form-line">
           <h3 class="modal-title" id="title">User Registration</h3>
           <div class="form-group">
-            <label for="namej" class="control-label">Surname</label>
-            <input type="text" class="form-control" id="namej" name="namej" value="" required="" title="Introdueix el cognom" placeholder="Garcia" #username>
+            <label for="namej" class="control-label">Name</label>
+            <input type="text" class="form-control" id="namej" name="namej" value="" required="" title="Introdueix el nom" placeholder="Josean" #name>
             <span class="help-block"></span>
           </div>
           <div class="form-group">
-            <label for="address" class="control-label">Password</label>
-            <input type="text" class="form-control" id="adress" value="" required="" placeholder="*****" #password>
+            <label for="surnamej" class="control-label">Surname</label>
+            <input type="text" class="form-control" id="surnamej" value="" required="" placeholder="García" #surname>
             <span class="help-block"></span>
           </div>
           <div class="form-group">
-            <label for="hometlf" class="control-label">Name</label>
-            <input type="text" class="form-control" id="hometlf" value="" required="" placeholder="Jose Antonio" #name>
+            <label for="passwordj" class="control-label">Password</label>
+            <input type="text" class="form-control" id="passwordj" value="" required="" placeholder="*****" #password>
             <span class="help-block"></span>
           </div>
           <div class="form-group">
-            <label for="worktlf" class="control-label">mail</label>
-            <input type="text" class="form-control" id="worktlf" value="" required="" placeholder="pepito@email.com" #mail>
+            <label for="rolej" class="control-label">Role</label>
+            <input type="text" class="form-control" id="rolej" value="" required="" placeholder="1=admin ; 0=no-admin" #role>
             <span class="help-block"></span>
           </div>
-          <button type="submit" class="btn btn-success btn-block" (click)="addStudent(username.value, password.value, name.value, mail.value)"><i class="fa fa-paper-plane" aria-hidden="false"></i> Registrar estudiant</button>
+          <button type="submit" class="btn btn-success btn-block" (click)="addStudent(name.value, surname.value, password.value, role.value)"><i class="fa fa-paper-plane" aria-hidden="false"></i> Registrar usuari</button>
         </div>
       </form>
     </div>

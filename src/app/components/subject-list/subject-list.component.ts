@@ -59,6 +59,8 @@ export class SubjectListComponent {
         console.log(data);
       });
   }
+
+
   searchQuatri(quatri: string) {
     this.subjectService.searchSubjectQuatri(quatri).subscribe(
       (data) => {
@@ -93,4 +95,37 @@ export class SubjectListComponent {
         console.log(this.sub);
       });
   }
+
+  searchName(name: string) {
+    this.subjectService.searchName(name).subscribe(
+      (data) => {
+        this.sub = data;
+        console.log(data);
+      });
+  }
+
+  searchSurname(surname: string) {
+    this.subjectService.searchSurname(surname).subscribe(
+      (data) => {
+        this.sub = data;
+        console.log(data);
+      });
+  }
+
+  searchRole(role: string) {
+      this.subjectService.searchRole(role).subscribe(
+        (data) => {
+          this.sub = data;
+          console.log(data);
+        });
+  }
+
+  searchState(state: string) {
+      this.subjectService.searchState(state).subscribe(
+        (data) => {
+          this.sub = data;
+          console.log(data);
+        });
+    }
 }
+
