@@ -12,6 +12,8 @@ import {Student} from '../../classes/student.model';
 export class SubjectListComponent {
   subject = new Subject('', '', '', [], '');
   student = new Student('', '', {home: '', work: ''}, '');
+  userM = {name: '', surname: '', password: '', role: false, state: false};
+  userD = {name: '', surname: '', password: '', role: false, state: false};
   constructor(private subjectService: SubjectService) {
   }
   sub: any;
@@ -127,5 +129,37 @@ export class SubjectListComponent {
           console.log(data);
         });
     }
+
+  userClickedM(user: any) {
+    this.userM = user;
+  }
+  modifyUser(name: string, surname: string, role: string) {
+    const oldName = this.userM.name;
+    this.userM.name = name;
+    this.userM.surname = surname;
+    if (role === '1') {
+      this.userM.role = true;
+    }else {
+      this.userM.role = false;
+    }
+
+    this.subjectService.modifyUser(this.userM, oldName).subscribe(
+      (data) => {
+        console.log(data);
+        window.location.reload();
+      });
+  }
+
+  deleteClicked (user: any) {
+    this.userD = user;
+  }
+  deleteUser(user: any) {
+    this.userD = user;
+    this.subjectService.deleteUser(this.userD).subscribe(
+      (data) => {
+        console.log(data);
+        window.location.reload();
+      });
+  }
 }
 

@@ -130,5 +130,21 @@ export class SubjectService {
       .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
 
   }
+  modifyUser(user: {name: string, surname: string, password: string, role: boolean, state: boolean}, oldName: string) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+    console.log(user);
+    return this.http.post( 'http://localhost:3000/student/users/update/' + oldName, user, options)
+      .map((res: Response) => res.json()) // ...and calling .json() on the response to return data
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
+  deleteUser(user: {name: string, surname: string, password: string, role: boolean, state: boolean}) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+    console.log(user);
+    return this.http.post( 'http://localhost:3000/student/users/deleteUser', user, options)
+      .map((res: Response) => res.json()) // ...and calling .json() on the response to return data
+      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  }
 
 }

@@ -27,7 +27,7 @@ export class LoginFormComponent {
         console.log(this.user);
     this.studentService.addStudent(this.user).subscribe(
       (data) => { console.log(data);
-        window.location.reload();}
+        window.location.reload(); }
     );
   }
   addSubject(name: string, quatri: string, studies: string, studentId: string, id: string) {
